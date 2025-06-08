@@ -1,0 +1,41 @@
+name: Deploy Landing Page CI/CD
+
+on:
+  push:
+    branches:
+      - main # Ejecutar este workflow cada vez que se haga push a la rama main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Ejecutar en un entorno Linux
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js for Linter (optional, for JS validation)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18' 
+
+    - name: Install Linting dependencies (optional)
+      run: |
+        npm install -g prettier # Un linter simple para HTML/CSS/JS
+
+    - name: Validate HTML/CSS/JS syntax (Simulated)
+      run: |
+        echo "--- Running basic syntax validation for HTML, CSS, JS ---"
+
+    - name: Prepare for Deployment (Simulated)
+      run: |
+        echo "--- Preparing static files for deployment ---"
+        echo "Files packaged and ready for deployment."
+
+    - name: Deploy to GitHub Pages (Automated by GitHub Pages config)
+      run: |
+        echo "--- Deploying to Production via GitHub Pages ---"
+        echo "Deployment triggered automatically by push to 'main' branch via GitHub Pages configuration."
+        echo "Access your site at: https://rodrigolopezu.github.io/feedhapp-landing-page/"
