@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         otherItem.classList.remove('active');
                     }
                 });
-                // Alterna la clase 'active' para el ítem actual
                 item.classList.toggle('active');
             });
         }
@@ -25,19 +24,19 @@ document.addEventListener('DOMContentLoaded', function() {
             text: "Desde que comencé a usar Feedh App, he logrado mejorar mis hábitos alimenticios de manera sencilla y efectiva. Las recomendaciones personalizadas me han ayudado a entender mejor lo que mi cuerpo necesita, y el seguimiento constante me motiva a seguir adelante.",
             author: "Mariana F.",
             age: "24 años",
-            image: "public/assets/images/usuario1.png" // Ruta corregida
+            image: "assets/images/usuario1.png"
         },
         {
             text: "Feedh App ha sido un cambio total en mi vida. Antes luchaba por mantenerme en forma y comer bien, pero ahora con los planes y el seguimiento personalizado, he alcanzado mis metas de peso y me siento increíble. ¡Lo recomiendo a cualquiera que busque mejorar su salud!",
             author: "Carlos P.",
             age: "35 años",
-            image: "public/assets/images/usuario2.png" // Ruta corregida
+            image: "assets/images/usuario2.png"
         },
         {
             text: "Como madre ocupada, necesitaba una solución práctica para comer saludable. Feedh App me ha facilitado la planificación de mis comidas y las de mi familia. Es intuitiva, fácil de usar y me ayuda a mantener el control de mi nutrición sin complicaciones.",
             author: "Sofía G.",
             age: "42 años",
-            image: "public/assets/images/usuario3.png" // Ruta corregida
+            image: "assets/images/usuario3.png"
         }
     ];
 
@@ -90,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (nextArrow) {
-        // Corrección: nextIndex estaba definido pero no usado. Simplemente se usa currentIndex.
+        nextIndex = (currentIndex + 1) % testimonials.length;
         nextArrow.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % testimonials.length;
             updateTestimonial();
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 window.scrollTo({
                     top: offsetPosition,
-                    behavior: 'smooth'
+                    behavior: 'smooth' 
                 });
             }
         });
