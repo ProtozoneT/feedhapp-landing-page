@@ -1142,4 +1142,469 @@ body {
     padding: 15px 0 15px 20px;
 }
 
+/* --- Estilos para la página de Desarrollo (Bonita, Minimalista, Lineal sin Flechas y Unificada) --- */
+
+/* Reutilizamos variables de :root de tu CSS existente */
+/* --primary-green: #2D6A4F; */
+/* --primary-green-hover: #21513D; */
+/* --text-dark: #2F2F2F; */
+/* --text-light: #5A5A5A; */
+/* --white: #FFFFFF; */
+/* --border-light: #e0e0e0; */
+/* --light-gray-bg: #FAFCFD; */
+
+.development-hero-section {
+    background: linear-gradient(135deg, var(--primary-green) 0%, #3a8a68 100%); /* Gradiente suave */
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* Mayor altura para un impacto visual */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.development-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0; /* Para una animación de entrada */
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s forwards ease-out; /* Animación de entrada */
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.development-hero-content h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto sutil */
+}
+
+.development-hero-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.section-title {
+    font-size: 2.8em;
+    color: var(--text-dark);
+    margin: 80px auto 60px auto; /* Márgenes top/bottom para separación */
+    font-weight: 700;
+    text-align: center;
+    max-width: 900px; /* Limitar ancho del título */
+    position: relative;
+    padding-bottom: 15px; /* Espacio para el subrayado */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px; /* Ancho del subrayado */
+    height: 4px;
+    background-color: var(--primary-green);
+    border-radius: 2px;
+}
+
+/* Sección Sistema Experto */
+.expert-system-section {
+    background-color: var(--white);
+    padding: 80px 20px;
+}
+
+.expert-system-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.expert-system-intro {
+    display: flex;
+    justify-content: center; /* Centrar las columnas */
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan */
+}
+
+.expert-system-intro .intro-column {
+    flex: 1;
+    min-width: 320px; /* Ancho mínimo para las columnas */
+    background-color: var(--light-gray-bg);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    border: 1px solid var(--border-light);
+}
+
+.expert-system-intro .intro-column:hover {
+    transform: translateY(-8px); /* Efecto de "levantar" al pasar el mouse */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al hover */
+}
+
+.expert-system-intro .intro-column h3 {
+    font-size: 1.9em;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.expert-system-intro .intro-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.expert-system-intro .intro-column ul li {
+    font-size: 1.05em;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.expert-system-intro .intro-column ul li::before {
+    content: '✓'; /* Un checkmark como bullet */
+    color: var(--primary-green);
+    font-weight: bold;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1.2em;
+    position: absolute;
+    left: 0;
+}
+
+.expert-system-conclusion {
+    font-size: 1.15em;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+/* Sección Cómo funciona en FeedhApp? (Diagrama Lineal y Unificado) */
+.how-it-works-section {
+    background-color: var(--light-gray-bg);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.how-it-works-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.diagram-wrapper {
+    display: flex; /* Para un diseño lineal horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los bloques */
+    align-items: stretch; /* Estira los bloques a la misma altura */
+    gap: 30px; /* Espacio entre bloques */
+    padding: 40px 0;
+}
+
+.diagram-block {
+    flex: 1; /* Permite que los bloques crezcan/encojan */
+    min-width: 200px; /* Ancho mínimo */
+    max-width: 250px; /* Ancho máximo para que quepan 4 en una fila */
+    background-color: var(--white); /* Fondo blanco para todos */
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    min-height: 180px; /* Altura mínima para una apariencia consistente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #5cb85c; /* Borde superior verde para todos los bloques */
+}
+
+.diagram-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.diagram-block .block-title {
+    font-weight: 700;
+    font-size: 1.3em;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* MODIFIED: Asegura que los ULs dentro de diagram-block tengan bullets y padding */
+.diagram-block ul {
+    list-style: disc; /* Mostrar bullets */
+    padding-left: 20px; /* Espacio para los bullets */
+    margin: 0; /* Eliminar margin por defecto para control total */
+}
+
+.diagram-block ul li {
+    font-size: 0.95em; /* Tamaño de fuente para los ítems */
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 5px; /* Espacio entre ítems */
+}
+
+/* Ocultamos completamente las flechas */
+.diagram-arrow {
+    display: none;
+}
+
+
+/* Sección Heurísticas */
+.heuristics-section {
+    background-color: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.heuristics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heuristics-container p {
+    font-size: 1.15em;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heuristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.heuristic-item {
+    background-color: var(--light-gray-bg);
+    padding: 25px; /* Ajustado ligeramente */
+    border-left: 5px solid var(--primary-green); /* Ajustado ligeramente */
+    border-radius: 8px; /* Ajustado ligeramente */
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); /* Ajustado ligeramente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transiciones */
+}
+
+.heuristic-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background-color: #f3f9f5; /* Un verde claro al pasar el mouse */
+}
+
+.heuristic-item h3 {
+    font-size: 1.25em; /* Ajustado ligeramente */
+    color: var(--text-dark);
+    margin-bottom: 10px; /* Ajustado ligeramente */
+    font-weight: 600;
+}
+
+.heuristic-item p {
+    font-size: 0.95em; /* Ajustado ligeramente */
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Estilo para las imágenes dentro de los heuristic-item */
+.heuristic-item .heuristic-image {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+    border: 1px solid var(--border-light); /* Borde sutil alrededor de la imagen */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+/* --- Media Queries para responsividad --- */
+@media (max-width: 992px) {
+    .diagram-wrapper {
+        gap: 15px; /* Reducir gap en tablets */
+    }
+    .diagram-block {
+        min-width: 220px;
+        max-width: 45%; /* Dos columnas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .development-hero-content h1 {
+        font-size: 2.5em;
+    }
+    .development-hero-content p {
+        font-size: 1em;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    .expert-system-intro {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .expert-system-intro .intro-column {
+        min-width: unset;
+        width: 100%;
+        padding: 25px;
+    }
+
+    .how-it-works-section .diagram-wrapper {
+        flex-direction: column; /* Apilar verticalmente en pantallas pequeñas */
+        align-items: center; /* Centrar elementos */
+        gap: 20px; /* Espacio vertical entre bloques */
+    }
+    .diagram-block {
+        width: 90%; /* Ocupar casi todo el ancho */
+        max-width: 350px; /* Máximo ancho para bloques apilados */
+        min-height: unset; /* Altura se ajusta al contenido */
+        padding: 25px;
+    }
+    /* Asegurar padding izquierdo para los bullets en móviles */
+    .diagram-block ul {
+        padding-left: 20px;
+    }
+
+    .heuristics-grid {
+        grid-template-columns: 1fr; /* Una sola columna para móviles */
+        gap: 20px;
+    }
+    .heuristic-item {
+        padding: 20px;
+    }
+    .heuristic-item h3 {
+        font-size: 1.2em;
+    }
+    .heuristic-item p {
+        font-size: 0.9em;
+    }
+
+    .expert-system-section,
+    .how-it-works-section,
+    .heuristics-section {
+        padding: 60px 20px; /* Reducir padding vertical */
+    }
+}
+
+@media (max-width: 480px) {
+    .development-hero-content h1 {
+        font-size: 2em;
+    }
+    .development-hero-content p {
+        font-size: 0.9em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+    .expert-system-intro .intro-column h3 {
+        font-size: 1.6em;
+    }
+}
+
+/* Sección de Acceso Nutricional del Sistema Experto (Móvil) */
+.expert-access-section {
+    background-color: var(--white);
+    padding: 80px 20px;
+    text-align: center; /* Centra el contenido si el flexbox no lo llena completamente */
+}
+
+.expert-access-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+    align-items: center; /* Alinea verticalmente los items en el centro */
+    gap: 50px; /* Espacio entre la imagen y el texto */
+    text-align: left; /* Alinea el texto a la izquierda dentro de sus columnas */
+}
+
+.expert-access-image-wrapper {
+    flex: 1; /* Permite que ocupe espacio flexible */
+    min-width: 300px; /* Ancho mínimo para la imagen antes de apilar */
+    max-width: 500px; /* Máximo ancho para la imagen */
+    display: flex;
+    justify-content: center; /* Centra la imagen si su tamaño es menor que el wrapper */
+    padding: 20px; /* Espacio alrededor de la imagen */
+}
+
+.expert-access-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Bordes redondeados para la imagen del celular */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease;
+}
+
+.expert-access-image:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el mouse */
+}
+
+.expert-access-content {
+    flex: 1.5; /* Ocupa más espacio que la imagen para el texto */
+    min-width: 300px; /* Ancho mínimo para el texto */
+    padding: 20px;
+}
+
+.expert-access-content h3 {
+    font-size: 2.2em; /* Tamaño del título para esta sub-sección */
+    color: var(--primary-green);
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.expert-access-content p {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Media queries para responsividad de esta nueva sección */
+@media (max-width: 768px) {
+    .expert-access-container {
+        flex-direction: column; /* Apilar imagen y texto en pantallas pequeñas */
+        gap: 30px;
+    }
+
+    .expert-access-image-wrapper,
+    .expert-access-content {
+        min-width: unset; /* Reiniciar min-width */
+        width: 100%; /* Ocupar todo el ancho disponible */
+        padding: 0; /* Eliminar padding extra para móviles */
+        text-align: center; /* Centrar el texto en móviles */
+    }
+
+    .expert-access-content h3 {
+        font-size: 1.8em;
+    }
+}
+
 
